@@ -21,7 +21,6 @@
       }
       echo "</div>";
 
-
       echo "<div class='quizContainer'>";
       echo "  <div class='quiz'>";
       echo "    <img class='quizImg' src='bilder/level1.jpg'>";
@@ -43,7 +42,6 @@
           echo "  </div>";
         }
       }
-
 
       if(isset($_SESSION['userlevel'])){
         $userLevel = $_SESSION['userlevel'];

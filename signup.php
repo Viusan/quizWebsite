@@ -53,7 +53,6 @@
         </form>
       </div>
     </div>
-
     <div id="imageContainer">
       <img src="bilder/quizSignUp.jpg" alt="">
     </div>

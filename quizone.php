@@ -79,6 +79,14 @@
       d: "f(x) = 2x+1",
       correct: "b",
     },
+    {
+      question: "Når starter vinter?",
+      a: "November",
+      b: "Desember",
+      c: "Januar",
+      d: "Februar",
+      correct: "b",
+    },
   ];
 
   const quiz = document.getElementById('quiz');
