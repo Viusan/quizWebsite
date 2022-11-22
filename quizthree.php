@@ -138,7 +138,7 @@
       if(currentQuiz < quizData.length){
         loadQuiz()
       }else {
-        if(score >= 4){
+        if(score >= quizData.length){
           quiz.innerHTML = `
           <h2 style="color: #ffe9b1">You answered ${score}/${quizData.length} questions correctly</h2>
           <div class="continueCompleteDiv">
