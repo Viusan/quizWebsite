@@ -79,6 +79,14 @@
       d: "f'(x) = 2x+1",
       correct: "b",
     },
+    {
+      question: "Hvilket år var andre verdenskrig?",
+      a: "1938",
+      b: "1945",
+      c: "1939",
+      d: "1925",
+      correct: "c",
+    },
   ];
 
   const quiz = document.getElementById('quiz');

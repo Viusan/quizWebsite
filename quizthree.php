@@ -72,12 +72,20 @@
       correct: "b",
     },
     {
-      question: "Hei bare svar noe",
-      a: "Barn",
-      b: "Veterans",
-      c: "Alle",
-      d: "f'(x) = 2x+1",
-      correct: "b",
+      question: "Hva er Scooby Doo sitt fulle navn",
+      a: "Scobert Doo",
+      b: "Scoobs The Dog",
+      c: "Scoviel The 3rd",
+      d: "Han heter bare Scooby Doo",
+      correct: "a",
+    },
+    {
+      question: "Frekvens er..",
+      a: "Hvor høy amplituden er",
+      b: "Avstanden fra bølgetopp til bølgetopp",
+      c: "Antall svingninger per sekund",
+      d: "Lengden på bølgen",
+      correct: "c",
     },
   ];
 
