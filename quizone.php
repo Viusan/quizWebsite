@@ -87,6 +87,14 @@
       d: "Februar",
       correct: "b",
     },
+    {
+      question: "Hvor høy er Sanchay?",
+      a: "130cm",
+      b: "140cm",
+      c: "180cm",
+      d: "160cm",
+      correct: "d",
+    },
   ];
 
   const quiz = document.getElementById('quiz');
