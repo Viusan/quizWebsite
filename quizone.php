@@ -10,7 +10,7 @@
 </head>
 <body id="quizBody">
   <?php
-    include_once 'header.php';
+    include_once 'header.php'; //Tar med HTML som er i header.php fil
   ?>
   <div class="quiz-container" id="quiz">
     <div class="centerDiv">
@@ -46,6 +46,7 @@
   </div>
 
   <script>
+    // Object array med spørsmål
     const quizData = [
     {
       question: "Hva blir du når du lærer deg PHP?",
@@ -96,7 +97,7 @@
       correct: "d",
     },
   ];
-
+  //Henter alle HTML elementer jeg trenger
   const quiz = document.getElementById('quiz');
   const answerEls = document.querySelectorAll('.answer')
   const questionEl = document.getElementById('question')
@@ -111,10 +112,11 @@
 
   loadQuiz()
 
-  function loadQuiz(){
-    deselectAnswers()
-    const currentQuizData = quizData[currentQuiz]
+  function loadQuiz(){//Funksjonen som displayer quizen
+    deselectAnswers()//Når du har svart på et spørsmål så resetter teksten så de neste spørsmålene kan displaye
+    const currentQuizData = quizData[currentQuiz]//Quizdata er object arrayen, og currentQuiz blir increasa for hver gang du går til neste spørsmål
 
+    //Bytter tekstene med current questionsa
     questionEl.innerText = currentQuizData.question
     a_text.innerText = currentQuizData.a
     b_text.innerText = currentQuizData.b
@@ -122,14 +124,14 @@
     d_text.innerText = currentQuizData.d
   }
 
-  function deselectAnswers(){
+  function deselectAnswers(){ //Funksjonen som gjør at teksten resetter
     answerEls.forEach(answerEl => answerEl.checked = false)
   }
 
-  function getSelected(){
+  function getSelected(){//Henter hvilken radio knapp jeg trakk på
     let answer
     answerEls.forEach(answerEl => {
-      if(answerEl.checked) {
+      if(answerEl.checked) {//Setter variabel answer til hva enn jeg trakk på
         answer = answerEl.id
       }
     })
@@ -137,16 +139,16 @@
   }
 
   submitBtn.addEventListener("click", () => {
-    const answer = getSelected()
-    if (answer){
-      if(answer == quizData[currentQuiz].correct) {
+    const answer = getSelected()//tar funksjonen som viser hva jeg trakk på og gjør om til en variabel
+    if (answer){//Hvis answer eksisterer kjøres denne if statementen
+      if(answer == quizData[currentQuiz].correct) {//Hvis radio knappen du trakk på matcher det som er det riktige svaret vil score variabelen øke med 1
         score++
       }
-      currentQuiz++
-      if(currentQuiz < quizData.length){
+      currentQuiz++//Vi må øke currentQuiz sånn at vi kan gå til neste spørsmål
+      if(currentQuiz < quizData.length){//Hvis spørsmålet du er på er mindre enn lengden på quizen vil den fortsette å kjøre loadQuiz()
         loadQuiz()
       }else {
-        if(score >= 4){
+        if(score >= 4){//Hvis din currentQuiz variabel er høyere enn quizData som er lengden på quizen så vil den displaye summary av hvordan du gjorde
           quiz.innerHTML = `
           <h2 style="color: #ffe9b1">You answered ${score}/${quizData.length} questions correctly</h2>
           <div class="continueCompleteDiv">
@@ -157,7 +159,7 @@
               </form>
           </div>
           `
-        }else{
+        }else{//Displayes hvis du fikk under maksimum score
           quiz.innerHTML = `
           <h2 style="color: #ffe9b1">You answered ${score}/${quizData.length} questions correctly</h2>
           <div>

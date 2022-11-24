@@ -9,7 +9,7 @@
   <title>Quiz</title>
 <body id="logInBody">
   <?php
-    include_once "header.php";
+    include_once "header.php"; //Tar med HTML som er i header.php fil
   ?>
   <div id="logInWebsiteContainer">
     <div id="loginContainer">
@@ -18,6 +18,7 @@
         <input class="loginInput" name="uid" type="text" placeholder="Username">
         <input class="loginInput" name="pwd" type="password" placeholder="Password">
         <?php
+          //Måten jeg displayer error er ved å se i url om det displayer error meldinger (Det er funksjoner som jeg har laget i functions.inc.php som gjør at det displayer ulike error meldinger)
           if (isset($_GET["error"])) {
             if ($_GET["error"] == "emptyinput") {
               echo "<p style='align-self: center;'>Fill in all fields.</p>";

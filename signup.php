@@ -24,6 +24,7 @@
           <input class="informasjonInput" name="pwd" type="password" placeholder="Password">
           <input class="informasjonInput" name="pwdrepeat" type="password" placeholder="Repeat Password">
           <?php
+          //Måten jeg displayer error er ved å se i url om det displayer error meldinger (Det er funksjoner som jeg har laget i functions.inc.php som gjør at det displayer ulike error meldinger)
             if (isset($_GET["error"])) {
               if ($_GET["error"] == "emptyinput") {
                 echo "<p style='align-self: center;'>Fill in all fields.</p>";

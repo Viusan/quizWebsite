@@ -1,5 +1,5 @@
 <?php
-
+  //Hvis submit button er trukket kjøres if statement
   if(isset($_POST["submit"])){
 
     $name = $_POST["name"];
@@ -34,7 +34,7 @@
       header("Location: ../signup.php?error=usernametaken");
       exit(); //stopper scriten fra å kjøre
     }
-
+    //Hivis det er ingen error så kjøres createUser() 
     createUser($conn, $name, $email, $username, $pwd);
   }
   else {

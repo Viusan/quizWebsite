@@ -3,7 +3,7 @@
   $dBUsername = "root";
   $dBPassword = "";
   $dBName = "quizproject";
-
+  //Starter connection 
   $conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
 
   //Hvis det connection ikke fungerer

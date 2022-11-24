@@ -1,15 +1,16 @@
 <?php
     session_start();
     include_once 'dbh.inc.php';
+    //Hvis du trukker på enten et av disse knappene så kjøres if statement
     if(isset($_POST['levelComplete']) || isset($_POST['nextLevel'])){
       $usersLevel = $_SESSION['userlevel'];
       $levelValue = $_POST['levelvalue'];
-      if($usersLevel <= $levelValue){ //This is here incase the user plays the quiz again when they completed, it wil add they score level by 1 every time they play which will allow them to cheat their ways into different level
-        $_SESSION['userlevel']++;
+      if($usersLevel <= $levelValue){ //Dette er hvis man repeterer quizen uten å fullføre neste quiz vil du kunne klare å jukse deg gjennom de andre nivåene
+        $_SESSION['userlevel']++;//Oppdaterer level info på tabell
         $sql = "UPDATE users SET level = '" . $levelValue . "' WHERE usersUid = '" . $_SESSION['useruid'] . "';";
         $conn->query($sql);
       }
-
+      
       if(isset($_POST['levelComplete'])){
         header("Location: ../homepage.php");
       }else if(isset($_POST['nextLevel'])){

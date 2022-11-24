@@ -10,6 +10,7 @@
 </head>
 <body class="homepageBody">
   <?php
+    //På hele siden har jeg SESSION variabler som er tilkoblet til brukeren som er logget inn. Den ser etter om brukeren er over et spesifik level og hvis de er vil den displaye nivåer.
     include_once 'header.php';
     if (isset($_SESSION["useruid"])){
       $userLevel = $_SESSION["userlevel"];
@@ -26,7 +27,6 @@
       echo "    <img class='quizImg' src='bilder/level1.jpg'>";
       echo "    <a href='quizone.php'><button class='quizButton'>Start</button></a>";
       echo "  </div>";
-
 
       if(isset($_SESSION['userlevel'])){
         $userLevel = $_SESSION['userlevel'];
@@ -83,19 +83,6 @@
       echo "  </div>";
       echo "</div>";
     }
-    /*
-    if(isset($_SESSION['useruid'])){
-      $loggedInUserName = $_SESSION['useruid'];
-      if($loggedInUserName == "Sanchay"){
-        echo "whats up blackie chan";
-        echo $_SESSION["userlevel"];
-      }else {
-        echo "hey yo are cool";
-      }
-    }
-    */
   ?>
-
-  
 </body>
 </html>
