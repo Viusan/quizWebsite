@@ -155,7 +155,12 @@ body{
   margin-right: 1.4vw;
 }
 
-.headerSection2{
+.headerSection2 a{
+  display: flex;
+  align-items: center;
+}
+
+.headerSection2, .adminPageATag{
   color:#ffe9b1
 }
 

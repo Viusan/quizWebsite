@@ -12,7 +12,12 @@
       //Hvis det eksister et session so heter ['useruid'] så vil den displaye denne html-en
         if (isset($_SESSION["useruid"])){
           echo "<p>Hello " . $_SESSION['useruid'] . "! </p>";
+          $admin = $_SESSION['admin'];
+          if($admin == 1){
+            echo "<a href='adminpage.php' class='adminPageATag'>Admin Page</a>";
+          }
           echo "<a href='includes/logout.inc.php' class='logoutATag'><p>Log out</p></a>";
+          
         }
       ?>
     </div>
