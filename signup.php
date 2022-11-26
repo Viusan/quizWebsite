@@ -8,7 +8,7 @@
   <link rel="icon" href="bilder/quizLogo.png">
   <title>Quiz</title>
 </head>
-<body>
+<body class="signUpBody">
   <?php
     include_once "header.php";
     include_once 'includes/ban.inc.php';

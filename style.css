@@ -3,6 +3,10 @@ body{
   font-family: arial;
 }
 
+.signUpBody{
+  overflow: hidden;
+}
+
 #websiteContainer, #informasjonsContainer form, #informasjonsContainer{
   display: flex;
 }
@@ -70,6 +74,7 @@ body{
 #logInBody{
   background-image: url(bilder/quizLogIn.jpg);
   background-size: 125vh;
+  overflow: hidden;
 }
 
 #logInWebsiteContainer {
@@ -255,6 +260,7 @@ body{
 #quizBody {
   background-color: #7743DB;
   background-image: linear-gradient(315deg, #b8c6db 0%, #7743DB 100%);
+  overflow: hidden;
 }
 
 .quiz-container {
