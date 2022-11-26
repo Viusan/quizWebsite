@@ -10,6 +10,7 @@
 <body id="logInBody">
   <?php
     include_once "header.php"; //Tar med HTML som er i header.php fil
+    include_once 'includes/ban.inc.php';
   ?>
   <div id="logInWebsiteContainer">
     <div id="loginContainer">

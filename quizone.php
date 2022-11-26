@@ -11,6 +11,7 @@
 <body id="quizBody">
   <?php
     include_once 'header.php'; //Tar med HTML som er i header.php fil
+    include_once 'includes/ban.inc.php';
   ?>
   <div class="quiz-container" id="quiz">
     <div class="centerDiv">

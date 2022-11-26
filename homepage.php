@@ -11,7 +11,8 @@
 <body class="homepageBody">
   <?php
     //På hele siden har jeg SESSION variabler som er tilkoblet til brukeren som er logget inn. Den ser etter om brukeren er over et spesifik level og hvis de er vil den displaye nivåer.
-    include_once 'header.php';
+    include_once 'header.php';  
+    include_once 'includes/ban.inc.php';
     if (isset($_SESSION["useruid"])){
       $userLevel = $_SESSION["userlevel"];
       echo "<div class='headerInformationContainer'>";
