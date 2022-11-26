@@ -36,6 +36,15 @@
     $delete = mysqli_query($conn, "DELETE FROM users WHERE usersId = '$id'");
   }
 
+  if (isset($_GET['ban'])){
+    $banNumber = $_GET['ban'];
+    if($banNumber = 0){
+      $banChoice = mysqli_query($conn, "UPDATE users SET banned = '1' WHERE usersId = '" . $_SESSION['userid'] . "'");
+    }else if($banNumber = 1){
+      $banChoice = mysqli_query($conn, "UPDATE users SET banned = '0' WHERE usersId = '" . $_SESSION['userid'] . "'");
+    }
+  }
+
     $sql = "SELECT usersId, usersName, usersEmail, usersUid, level, admin, banned FROM users;";
     $result = $conn-> query($sql);
 
@@ -57,8 +66,8 @@
           <td>". $row["level"] ."</td>
           <td>". $row["admin"] ."</td>
           <td>". $banText ."</td>
+          <td> <a href='adminpage.php?ban=". $row["banned"]. "' class='deleteButton'>BAN/UNBAN</a></td>
           <td> <a href='adminpage.php?id=". $row["usersId"] ."' class='deleteButton'>Delete </a></td>
-          <td>". $banText ."</td>
         </tr>";
       }
       echo "</table>";
