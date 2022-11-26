@@ -14,6 +14,6 @@ if (isset($_POST['submit'])) {//Hvis submit knappen har blitt trukket på kjøre
   loginUser($conn, $username, $pwd);//Når du har trukket på log in kjøres loginUser funksjonen som ligger i function.inc.php
 }
 else {
-  header("Location: ../login.php?dettefunaikkepenishodelol");
+  header("Location: ../login.php?didnotwork");
   exit();
 }

@@ -120,6 +120,7 @@ function loginUser($conn, $username, $pwd){
     $_SESSION["useruid"] = $uidExists["usersUid"];
     $_SESSION["userlevel"] = $uidExists["level"];
     $_SESSION["banned"] = $uidExists["banned"];
+    $_SESSION["admin"] = $uidExists["admin"];
     header("location: ../homepage.php");
     exit();
   }

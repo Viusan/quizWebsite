@@ -13,6 +13,7 @@
   <?php
     include_once 'header.php';
     include_once 'includes/ban.inc.php';
+    
   ?>
   <div class="quiz-container" id="quiz">
     <div class="centerDiv">
