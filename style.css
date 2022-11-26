@@ -329,3 +329,43 @@ ul li label {
 .resultButtons:hover {
   transform: translateY(-1px);
 }
+
+/*ban page*/
+.banBody{
+  overflow: hidden;
+  background-color: #7743DB
+}
+
+
+.banContainer{
+  margin: 10vh 0 0 10vw;
+  background-color: #3b3486;
+  height: 70vh;
+  width: 80vw;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.banInformation{
+  padding: 100px 0 100px 20px;
+}
+
+.banTitle{
+  color: #ffe9b1;
+  font-size: 4.5em;
+}
+
+.banText{
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.banImage{
+  display: flex;
+  align-items: center;
+}
+
+.banImage img{
+  height: 50vh;
+}

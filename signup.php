@@ -51,7 +51,7 @@
             }
           ?>
           <button class="submitButton" type="submit" name="submit">Sign Up</button>
-          <a class="memberATag" href="login.php"><p>already a have an account?</p></a>
+          <a class="memberATag" href="login.php"><p>already have an account?</p></a>
         </form>
       </div>
     </div>
