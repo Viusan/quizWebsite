@@ -39,20 +39,13 @@
 
   if(isset($_GET['ban'])){
     $banNumber = $_GET['ban'];
-    $banId = $_GET['banid'];
     $banChange = mysqli_query($conn, "UPDATE users SET banned = '1' WHERE usersId = '$banNumber'");
   }
-/*
-  if (isset($_GET['ban'])){
-    $banNumber = $_GET['ban'];
-    $banId = $_GET['banid'];
-    if($banNumber = 0){
-      $banChoice = mysqli_query($conn, "UPDATE users SET banned = '1' WHERE usersId = '22'");
-    }else if($banNumber = 1){
-      $banChoice = mysqli_query($conn, "UPDATE users SET banned = '0' WHERE usersId = '$banId'");
-    }
+
+  if(isset($_GET['unban'])){
+    $unbanNumber = $_GET['unban'];
+    $banChange = mysqli_query($conn, "UPDATE users SET banned = '0' WHERE usersId = '$unbanNumber'");
   }
-  */
 
     $sql = "SELECT usersId, usersName, usersEmail, usersUid, level, admin, banned FROM users;";
     $result = $conn-> query($sql);
@@ -75,7 +68,8 @@
           <td>". $row["level"] ."</td>
           <td>". $row["admin"] ."</td>
           <td>". $banText ."</td>
-          <td> <a href='adminpage.php?ban=". $row["banned"]. "&banid=". $row["usersId"]. "' class='deleteButton'>BAN/UNBAN</a></td>
+          <td> <a href='adminpage.php?ban=". $row["usersId"]. "' class='deleteButton'>BAN</a></td>
+          <td> <a href='adminpage.php?unban=". $row["usersId"]. "' class='deleteButton'>UNBAN</a></td>
           <td> <a href='adminpage.php?id=". $row["usersId"] ."' class='deleteButton'>Delete </a></td>
         </tr>";
       }
