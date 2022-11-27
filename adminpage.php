@@ -1,3 +1,4 @@
+<?php include_once "header.php";?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,6 +10,8 @@
   <title>Quiz</title>
 </head>
 <body class="adminBody">
+  <div class="webcontainer">
+  <div class="tableDiv">
   <table class="adminTable">
     <tr>
       <th>User ID</th>
@@ -16,11 +19,11 @@
       <th>User Email</th>
       <th>User Uid</th>
       <th>User Level</th>
-      <th>User Amin</th>
+      <th>User Admin</th>
       <th>User Banned</th>
     </tr>
   <?php
-  include_once "header.php";
+  
   include_once "includes/dbh.inc.php";
   if(isset($_SESSION["admin"])){
     $admin = $_SESSION['admin'];
@@ -59,6 +62,13 @@
           $banText = "BANNED";
         }
 
+        $adminText = "";
+        if($row['admin'] == 0){
+          $adminText = "NOT ADMIN";
+        }else if($row['admin'] == 1){
+          $adminText = "ADMIN";
+        }
+
 
         echo "<tr>
           <td>". $row["usersId"] . "</td>
@@ -66,14 +76,19 @@
           <td>". $row["usersEmail"] ."</td>
           <td>". $row["usersUid"] ."</td>
           <td>". $row["level"] ."</td>
-          <td>". $row["admin"] ."</td>
+          <td>". $adminText ."</td>
           <td>". $banText ."</td>
           <td> <a href='adminpage.php?ban=". $row["usersId"]. "' class='deleteButton'>BAN</a></td>
           <td> <a href='adminpage.php?unban=". $row["usersId"]. "' class='deleteButton'>UNBAN</a></td>
           <td> <a href='adminpage.php?id=". $row["usersId"] ."' class='deleteButton'>Delete </a></td>
         </tr>";
       }
-      echo "</table>";
+      echo "
+          </table>
+          </div>
+          </div>
+        ";
+
     }
     else{
       echo "No users found";
