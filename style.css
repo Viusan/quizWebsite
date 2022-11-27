@@ -380,3 +380,28 @@ ul li label {
 .banImage img{
   height: 50vh;
 }
+
+/*admin page*/
+.adminBody{
+  background-color: #7743DB;
+}
+
+.adminTable{
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  background-color: #3b3486;
+}
+
+.adminTable tr:nth-child(even){
+  background-color: #7743DB;
+}
+
+.adminTable tr{
+  border:solid 1px black;
+  color: #fff;
+}
+
+.deleteButton{
+  color: #F7B42C
+}

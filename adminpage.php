@@ -8,8 +8,8 @@
   <link rel="icon" href="bilder/quizLogo.png">
   <title>Quiz</title>
 </head>
-<body>
-  <table>
+<body class="adminBody">
+  <table class="adminTable">
     <tr>
       <th>User ID</th>
       <th>User Name</th>
