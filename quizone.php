@@ -40,8 +40,6 @@
         </ul>
       </div>
     </div>
-    
-
     <button id="submit">Submit</button>
     
   </div>
