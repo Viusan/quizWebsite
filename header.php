@@ -13,7 +13,7 @@
         if (isset($_SESSION["useruid"])){
           echo "<p>Hello " . $_SESSION['useruid'] . "! </p>";
           $admin = $_SESSION['admin'];
-          if($admin == 1){
+          if($admin == 1){ //Hvis du er admin så vil du få tilgang til å komme deg til admin siden
             echo "<a href='adminpage.php' class='adminPageATag'>Admin Page</a>";
           }
           echo "<a href='includes/logout.inc.php' class='logoutATag'><p>Log out</p></a>";
