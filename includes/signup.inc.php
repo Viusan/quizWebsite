@@ -10,7 +10,7 @@
 
     require_once 'dbh.inc.php';
     require_once 'functions.inc.php';
-
+    //Functions vil returnere true eller false og disse vil da displaye en error melding hvis funcitonen returnerer true
     if(emptyInputSignup($name, $email, $username, $pwd, $pwdRepeat) !== false){ //Du sender in de valusa i functionen
       header("Location: ../signup.php?error=emptyinput");
       exit();

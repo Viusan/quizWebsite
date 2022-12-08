@@ -25,6 +25,7 @@
   <?php
   
   include_once "includes/dbh.inc.php";
+  //Ser om du er admin, hvis du er det kan du komme deg til siden, ellers vil den altid ta deg med til homepage.php
   if(isset($_SESSION["admin"])){
     $admin = $_SESSION['admin'];
     if(!$admin == 1){
@@ -33,19 +34,18 @@
   }else{
     header("Location: homepage.php");
   }
-
-  if (isset($_GET['id'])){
+  //Disse if statementene ser hva som dukker i url-en og kjører sql kode
+  if (isset($_GET['id'])){//Ser etter id som dukker opp i url og sletter den id-en fra databasen
     $id = $_GET['id'];
     $delete = mysqli_query($conn, "DELETE FROM users WHERE usersId = '$id'");
-    /*delete = mysqli_query($conn, "UPDATE users SET banned = '1' WHERE usersId = '22'");*/ 
   }
 
-  if(isset($_GET['ban'])){
+  if(isset($_GET['ban'])){//ser etter id igjen i database og setter ban value til 1 som gjør at brukeren blir bannet
     $banNumber = $_GET['ban'];
     $banChange = mysqli_query($conn, "UPDATE users SET banned = '1' WHERE usersId = '$banNumber'");
   }
 
-  if(isset($_GET['unban'])){
+  if(isset($_GET['unban'])){//Ser etter id og gjør om ban value til 0 som unbanner
     $unbanNumber = $_GET['unban'];
     $banChange = mysqli_query($conn, "UPDATE users SET banned = '0' WHERE usersId = '$unbanNumber'");
   }
@@ -53,23 +53,23 @@
     $sql = "SELECT usersId, usersName, usersEmail, usersUid, level, admin, banned FROM users;";
     $result = $conn-> query($sql);
 
-    if($result -> num_rows > 0){
+    if($result -> num_rows > 0){//Displaye resultat fra database
       while ($row = $result -> fetch_assoc()) {
-        $banText = "";
+        $banText = "";//Gjør om 0 og 1 til tekst for utsene
         if($row['banned'] == 0){
           $banText = "NOT BANNED";
         }else if($row['banned'] == 1){
           $banText = "BANNED";
         }
 
-        $adminText = "";
+        $adminText = "";//Gjør om 0 og 1 til tekst for utsene
         if($row['admin'] == 0){
           $adminText = "NOT ADMIN";
         }else if($row['admin'] == 1){
           $adminText = "ADMIN";
         }
 
-
+        //Lager tabellen
         echo "<tr>
           <td>". $row["usersId"] . "</td>
           <td>". $row["usersName"] . "</td>
@@ -90,7 +90,7 @@
         ";
 
     }
-    else{
+    else{//Hvis det er ingen brukere
       echo "No users found";
     }
   ?>
