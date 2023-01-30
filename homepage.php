@@ -17,7 +17,7 @@
       $userLevel = $_SESSION["userlevel"];
       echo "<div class='headerInformationContainer'>";
       echo "  <h2>Welcome to the website</h2>";
-      echo "  <p>scroll down to check out our quiz</p>";
+      echo "  <p>Scroll down to check out our quiz</p>";
       if($userLevel == 3){
         echo "<h1 id='completeTitle'>Wow, you completed everything!</h1>";
       }
