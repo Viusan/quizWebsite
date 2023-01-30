@@ -69,20 +69,20 @@
       echo "  </div>";
       echo "</div>";
 
-      echo "<div class='quizContainer'>";
-      echo "  <div class='quiz'>";
-      echo "    <img class='quizImg' src='bilder/notPlayable.jpg'>";
-      echo "    <a href=''><button class='quizButton' disabled>Start</button></a>";
-      echo "  </div>";
-      echo "  <div class='quiz'>";
-      echo "    <img class='quizImg' src='bilder/notPlayable.jpg'>";
-      echo "    <a href=''><button class='quizButton' disabled>Start</button></a>";
-      echo "  </div>";
-      echo "  <div class='quiz'>";
-      echo "    <img class='quizImg' src='bilder/notPlayable.jpg'>";
-      echo "    <a href=''><button class='quizButton' disabled>Start</button></a>";
-      echo "  </div>";
-      echo "</div>";
+      echo "<div class='quizContainer'>
+        <div class='quiz'>
+          <img class='quizImg' src='bilder/notPlayable.jpg'>
+          <a href=''><button class='quizButton' disabled>Start</button></a>
+        </div>
+        <div class='quiz'>
+          <img class='quizImg' src='bilder/notPlayable.jpg'>
+          <a href=''><button class='quizButton' disabled>Start</button></a>
+        </div>
+        <div class='quiz'>
+          <img class='quizImg' src='bilder/notPlayable.jpg'>
+          <a href=''><button class='quizButton' disabled>Start</button></a>
+        </div>
+      </div>";
     }
   ?>
 </body>
