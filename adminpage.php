@@ -29,10 +29,10 @@
   if(isset($_SESSION["admin"])){
     $admin = $_SESSION['admin'];
     if(!$admin == 1){
-      header("Location: homepage.php");
+      header("Location: index.php");
     }
   }else{
-    header("Location: homepage.php");
+    header("Location: index.php");
   }
   //Disse if statementene ser hva som dukker i url-en og kjører sql kode
   if (isset($_GET['id'])){//Ser etter id som dukker opp i url og sletter den id-en fra databasen

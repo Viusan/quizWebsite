@@ -12,7 +12,7 @@
       }
       
       if(isset($_POST['levelComplete'])){
-        header("Location: ../homepage.php");
+        header("Location: ../index.php");
       }else if(isset($_POST['nextLevel'])){
         switch ($levelValue){ //Som en if statement. Ser om du er level 1 eller 2, så gir den deg mulighet til å gå til det neste nivået ditt
           case '1': header("Location: ../quiztwo.php"); break;
@@ -20,6 +20,6 @@
         }
       }
     }else{
-      header("Location: ../homepage.php");
+      header("Location: ../index.php");
     }
   ?>

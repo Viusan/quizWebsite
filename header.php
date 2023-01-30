@@ -4,8 +4,8 @@
 
   <div class="headerContainer">
     <div class="logoContainer">
-      <a href="homepage.php"><img src="bilder/quizLogo.png"></a>
-      <a href="homepage.php"><p>Quiz</p></a>
+      <a href="index.php"><img src="bilder/quizLogo.png"></a>
+      <a href="index.php"><p>Quiz</p></a>
     </div>
     <div class="headerSection2">
       <?php

@@ -162,7 +162,7 @@
           quiz.innerHTML = `
           <h2 style="color: #ffe9b1">You answered ${score}/${quizData.length} questions correctly</h2>
           <div>
-            <button class="resultButtons" onclick="location.href='homepage.php'">Homepage</button>
+            <button class="resultButtons" onclick="location.href='index.php'">Homepage</button>
             <button class="resultButtons" onclick="location.reload()">Reload</button>
           </div>
           `
