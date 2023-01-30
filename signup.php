@@ -28,25 +28,25 @@
           //Måten jeg displayer error er ved å se i url om det displayer error meldinger (Det er funksjoner som jeg har laget i functions.inc.php som gjør at det displayer ulike error meldinger)
             if (isset($_GET["error"])) {
               if ($_GET["error"] == "emptyinput") {
-                echo "<p style='align-self: center;'>Fill in all fields.</p>";
+                echo "<p style='align-self: center; color: #F08080;'>Fill in all fields.</p>";
               }
               else if ($_GET["error"] == "invaliduid") {
-                echo "<p style='align-self: center;'>Choose a proper username.</p>";
+                echo "<p style='align-self: center; color: #F08080;'>Choose a proper username.</p>";
               }
               else if ($_GET["error"] == "invalidemail") {
-                echo "<p style='align-self: center;'>Choose a proper email.</p>";
+                echo "<p style='align-self: center; color: #F08080;'>Choose a proper email.</p>";
               }
               else if ($_GET["error"] == "passworddontmatch") {
-                echo "<p style='align-self: center;'>Pasword doesnt match.</p>";
+                echo "<p style='align-self: center; color: #F08080;'>Pasword doesnt match.</p>";
               }
               else if ($_GET["error"] == "stmtfailed") {
-                echo "<p style='align-self: center;'>Something went wrong.</p>";
+                echo "<p style='align-self: center; color: #F08080;'>Something went wrong.</p>";
               }
               else if ($_GET["error"] == "usernametaken") {
-                echo "<p style='align-self: center;'>Username already in use.</p>";
+                echo "<p style='align-self: center; color: #F08080;'>Username already in use.</p>";
               }
               else if ($_GET["error"] == "none") {
-                echo "<p style='align-self: center;'>You have signed up.</p>";
+                echo "<p style='align-self: center; color: #F08080;'>You have signed up.</p>";
               }
             }
           ?>

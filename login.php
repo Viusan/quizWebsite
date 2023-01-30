@@ -22,10 +22,10 @@
           //Måten jeg displayer error er ved å se i url om det displayer error meldinger (Det er funksjoner som jeg har laget i functions.inc.php som gjør at det displayer ulike error meldinger)
           if (isset($_GET["error"])) {
             if ($_GET["error"] == "emptyinput") {
-              echo "<p style='align-self: center;'>Fill in all fields.</p>";
+              echo "<p style='align-self: center; color: #F08080;'>Fill in all fields.</p>";
             }
             else if ($_GET["error"] == "wronglogin") {
-              echo "<p style='align-self: center;' class='errorPTag'>Incorrect login information.</p>";
+              echo "<p style='align-self: center; color: #F08080;' class='errorPTag;'>Incorrect login information.</p>";
             }
           }
         ?>
