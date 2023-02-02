@@ -10,6 +10,12 @@
   <title>Quiz</title>
 </head>
 <body class="adminBody">
+  <div class="searchBarDiv">
+    <form action="" method="GET">
+      <input type="text" name="search" placeholder="Search for a user">
+      <button type="submit">Search</button>
+    </form>
+  </div>
   <div class="webcontainer">
   <div class="tableDiv">
   <table class="adminTable">
@@ -22,8 +28,13 @@
       <th>User Admin</th>
       <th>User Banned</th>
     </tr>
+    <?php
+    
+    include_once "includes/dbh.inc.php";
+    
+    
+  ?>
   <?php
-  
   include_once "includes/dbh.inc.php";
   //Ser om du er admin, hvis du er det kan du komme deg til siden, ellers vil den altid ta deg med til homepage.php
   if(isset($_SESSION["admin"])){
@@ -48,6 +59,40 @@
   if(isset($_GET['unban'])){//Ser etter id og gjør om ban value til 0 som unbanner
     $unbanNumber = $_GET['unban'];
     $banChange = mysqli_query($conn, "UPDATE users SET banned = '0' WHERE usersId = '$unbanNumber'");
+  }
+  if(isset($_GET['search'])){
+    $searchName = $_GET['search'];
+    $fetchUserSQL = "SELECT * FROM users WHERE usersUid ='$searchName';";
+    $fetchResult =  $conn-> query($fetchUserSQL);
+    if($fetchResult -> num_rows > 0){
+      while ($row = $fetchResult -> fetch_assoc()){
+        $banText = "";//Gjør om 0 og 1 til tekst for utsene
+        if($row['banned'] == 0){
+          $banText = "NOT BANNED";
+        }else if($row['banned'] == 1){
+          $banText = "BANNED";
+        }
+        $adminText = "";//Gjør om 0 og 1 til tekst for utsene
+        if($row['admin'] == 0){
+          $adminText = "NOT ADMIN";
+        }else if($row['admin'] == 1){
+          $adminText = "ADMIN";
+        }
+        echo "<tr>
+        <td style='background-color:#50C878;'>". $row["usersId"] . "</td>
+        <td style='background-color:#50C878;'>". $row["usersName"] . "</td>
+        <td style='background-color:#50C878;'>". $row["usersEmail"] ."</td>
+        <td style='background-color:#50C878;'>". $row["usersUid"] ."</td>
+        <td style='background-color:#50C878;'>". $row["level"] ."</td>
+        <td style='background-color:#50C878;'>". $adminText ."</td> 
+        <td style='background-color:#50C878;'>". $banText ."</td>
+        <td style='background-color:#50C878;'> <a href='adminpage.php?ban=". $row["usersId"]. "' class='deleteButton'>BAN</a></td>
+        <td style='background-color:#50C878;'> <a href='adminpage.php?unban=". $row["usersId"]. "' class='deleteButton'>UNBAN</a></td>
+        <td style='background-color:#50C878;'> <a href='adminpage.php?id=". $row["usersId"] ."' class='deleteButton'>Delete </a></td>
+      </tr>";
+      
+      }
+    }
   }
 
     $sql = "SELECT usersId, usersName, usersEmail, usersUid, level, admin, banned FROM users;";
@@ -76,7 +121,7 @@
           <td>". $row["usersEmail"] ."</td>
           <td>". $row["usersUid"] ."</td>
           <td>". $row["level"] ."</td>
-          <td>". $adminText ."</td>
+          <td>". $adminText ."</td> 
           <td>". $banText ."</td>
           <td> <a href='adminpage.php?ban=". $row["usersId"]. "' class='deleteButton'>BAN</a></td>
           <td> <a href='adminpage.php?unban=". $row["usersId"]. "' class='deleteButton'>UNBAN</a></td>

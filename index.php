@@ -37,7 +37,7 @@
         }else {
           echo "<div class='quiz'>
                   <img class='quizImg' src='bilder/completePreviousLevel.jpg'>
-                  <a href=''><button class='quizButton' disabled>Start</button></a>
+                  <a href=''><button class='quizButton' disabled>Not unlocked yet!</button></a>
                 </div>";
         }
       }
@@ -52,7 +52,7 @@
         }else {
           echo "<div class='quiz'>
                   <img class='quizImg' src='bilder/completePreviousLevel.jpg'>
-                  <a href=''><button class='quizButton' disabled>Start</button></a>
+                  <a href=''><button class='quizButton' disabled>Not unlocked yet!</button></a>
                 </div>";
         }
       }
@@ -69,18 +69,19 @@
       echo "<div class='quizContainer'>
               <div class='quiz'>
                 <img class='quizImg' src='bilder/notPlayable.jpg'>
-                <a href=''><button class='quizButton' disabled>Start</button></a>
+                <a href=''><button class='grey' class='quizButton' disabled>Not Available!</button></a>
               </div>
               <div class='quiz'>
                 <img class='quizImg' src='bilder/notPlayable.jpg'>
-                <a href=''><button class='quizButton' disabled>Start</button></a>
+                <a href=''><button class='grey' class='quizButton' disabled>Not Available!</button></a>
               </div>
               <div class='quiz'>
                 <img class='quizImg' src='bilder/notPlayable.jpg'>
-                <a href=''><button class='quizButton' disabled>Start</button></a>
+                <a href=''><button class='grey' class='quizButton' disabled>Not Available!</button></a>
               </div>
             </div>";
     }
   ?>
+  
 </body>
 </html>

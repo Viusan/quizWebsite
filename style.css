@@ -3,6 +3,16 @@ body{
   font-family: arial;
 }
 
+.grey{
+  background-color: #636363;
+  color: #ffff;
+  font-size: 1.7em;
+  border: none;
+  height: 8.5vh;
+  border-radius: 5px;
+  width: 25vw;
+}
+
 .signUpBody{
   overflow: hidden;
 }
@@ -81,7 +91,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 90vh;
 }
 
 #loginContainer {
