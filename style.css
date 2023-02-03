@@ -406,7 +406,9 @@ ul li label {
 .tableDiv{
   width: 70vw;
   overflow: auto;
-  height: 60vh;
+  height: 70vh;
+  border: 1px solid 	#36454F;
+  border-radius: 10px 0 0 10px;
 }
 
 .adminTable{
@@ -414,7 +416,7 @@ ul li label {
   width: 100%;
   text-align: left;
   background-color: #3b3486;
-  border-radius: 10px;
+  border-radius: 10px 0 0 10px;
 }
 
 .adminTable td{
@@ -428,7 +430,6 @@ ul li label {
 }
 
 .adminTable tr{
-  border:solid 1px black;
   color: #ffe9b1;
   text-align: center;
   height: 6vh;
@@ -437,3 +438,28 @@ ul li label {
 .deleteButton{
   color: #F7B42C
 }
+
+.searchBarDiv{
+  display: flex;
+  justify-content: center;
+}
+
+.searchBar, .searchButton{
+  border: 0;
+  margin-top: 30px;
+}
+
+.searchBar{
+  width: 60vw;
+  height: 6vh;
+  border-radius: 5px 0 0 5px;
+  margin: 0;
+}
+
+.searchButton{
+  width: 10vw;
+  height: 6vh;
+  border-radius: 0 5px 5px 0;
+}
+
+

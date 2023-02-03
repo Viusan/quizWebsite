@@ -12,8 +12,8 @@
 <body class="adminBody">
   <div class="searchBarDiv">
     <form action="" method="GET">
-      <input type="text" name="search" placeholder="Search for a user">
-      <button type="submit">Search</button>
+      <input type="text" name="search" placeholder="Search for a user" class="searchBar">
+      <button type="submit" class="searchButton">Search</button>
     </form>
   </div>
   <div class="webcontainer">
@@ -60,9 +60,12 @@
     $unbanNumber = $_GET['unban'];
     $banChange = mysqli_query($conn, "UPDATE users SET banned = '0' WHERE usersId = '$unbanNumber'");
   }
+  $searchName = "1";
   if(isset($_GET['search'])){
-    $searchName = $_GET['search'];
-    $fetchUserSQL = "SELECT * FROM users WHERE usersUid ='$searchName';";
+    if ($_GET['search'] != "") {
+      $searchName = $_GET['search'];
+    }
+    $fetchUserSQL = "SELECT * FROM users WHERE usersName like '%$searchName%';";
     $fetchResult =  $conn-> query($fetchUserSQL);
     if($fetchResult -> num_rows > 0){
       while ($row = $fetchResult -> fetch_assoc()){
@@ -93,9 +96,10 @@
       
       }
     }
+  } else {
+    $searchName = "1";
   }
-
-    $sql = "SELECT usersId, usersName, usersEmail, usersUid, level, admin, banned FROM users;";
+    $sql = "SELECT * FROM users WHERE NOT usersName like '%$searchName%';";
     $result = $conn-> query($sql);
 
     if($result -> num_rows > 0){//Displaye resultat fra database
