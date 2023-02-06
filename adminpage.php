@@ -82,16 +82,20 @@
           $adminText = "ADMIN";
         }
         echo "<tr>
-        <td style='background-color:#50C878;'>". $row["usersId"] . "</td>
-        <td style='background-color:#50C878;'>". $row["usersName"] . "</td>
-        <td style='background-color:#50C878;'>". $row["usersEmail"] ."</td>
-        <td style='background-color:#50C878;'>". $row["usersUid"] ."</td>
-        <td style='background-color:#50C878;'>". $row["level"] ."</td>
-        <td style='background-color:#50C878;'>". $adminText ."</td> 
-        <td style='background-color:#50C878;'>". $banText ."</td>
-        <td style='background-color:#50C878;'> <a href='adminpage.php?ban=". $row["usersId"]. "' class='deleteButton'>BAN</a></td>
-        <td style='background-color:#50C878;'> <a href='adminpage.php?unban=". $row["usersId"]. "' class='deleteButton'>UNBAN</a></td>
-        <td style='background-color:#50C878;'> <a href='adminpage.php?id=". $row["usersId"] ."' class='deleteButton'>Delete </a></td>
+        <td style='background-color:#50C878;' class='adminTd'>". $row["usersId"] . "</td>
+        <td style='background-color:#50C878;' class='adminTd'>". $row["usersName"] . "</td>
+        <td style='background-color:#50C878;' class='adminTd'>". $row["usersEmail"] ."</td>
+        <td style='background-color:#50C878;' class='adminTd'>". $row["usersUid"] ."</td>
+        <td style='background-color:#50C878;' class='adminTd'>". $row["level"] ."</td>
+        <td style='background-color:#50C878;' class='adminTd'>". $adminText ."</td>";
+        if($banText == "BANNED"){
+          echo "<td style='background-color:#50C878;' class='banned'>". $banText ."</td>";
+        }else{
+          echo "<td style='background-color:#50C878;' class='notBanned'>". $banText ."</td>";
+        }
+        echo "<td style='background-color:#50C878;' class='adminTd'> <a href='adminpage.php?ban=". $row["usersId"]. "' class='deleteButton'>BAN</a></td>
+        <td style='background-color:#50C878;' class='adminTd'> <a href='adminpage.php?unban=". $row["usersId"]. "' class='deleteButton'>UNBAN</a></td>
+        <td style='background-color:#50C878;' class='adminTd'> <a href='adminpage.php?id=". $row["usersId"] ."' class='deleteButton'>Delete </a></td>
       </tr>";
       
       }
@@ -120,16 +124,21 @@
 
         //Lager tabellen
         echo "<tr>
-          <td>". $row["usersId"] . "</td>
-          <td>". $row["usersName"] . "</td>
-          <td>". $row["usersEmail"] ."</td>
-          <td>". $row["usersUid"] ."</td>
-          <td>". $row["level"] ."</td>
-          <td>". $adminText ."</td> 
-          <td>". $banText ."</td>
-          <td> <a href='adminpage.php?ban=". $row["usersId"]. "' class='deleteButton'>BAN</a></td>
-          <td> <a href='adminpage.php?unban=". $row["usersId"]. "' class='deleteButton'>UNBAN</a></td>
-          <td> <a href='adminpage.php?id=". $row["usersId"] ."' class='deleteButton'>Delete </a></td>
+          <td class='adminTd'>". $row["usersId"] . "</td>
+          <td class='adminTd'>". $row["usersName"] . "</td>
+          <td class='adminTd'>". $row["usersEmail"] ."</td>
+          <td class='adminTd'>". $row["usersUid"] ."</td>
+          <td class='adminTd'>". $row["level"] ."</td>
+          <td class='adminTd'>". $adminText ."</td>";
+          if($banText == "BANNED"){
+            echo "<td class='banned'>". $banText ."</td>";
+          }else{
+            echo "<td class='notBanned'>". $banText ."</td>";
+          }
+          echo "
+          <td class='adminTd'> <a href='adminpage.php?ban=". $row["usersId"]. "' class='deleteButton'>BAN</a></td>
+          <td class='adminTd'> <a href='adminpage.php?unban=". $row["usersId"]. "' class='deleteButton'>UNBAN</a></td>
+          <td class='adminTd'> <a href='adminpage.php?id=". $row["usersId"] ."' class='deleteButton'>Delete </a></td>
         </tr>";
       }
       echo "

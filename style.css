@@ -421,8 +421,20 @@ ul li label {
 
 .adminTable td{
   text-align: center;
-  color: #fff;
   height: 3vh;
+}
+
+.adminTd{
+  
+  color: #fff;
+}
+
+.notBanned{
+  color: #00FF7F;
+}
+
+.banned{
+  color: 	#FA8072;
 }
 
 .adminTable tr:nth-child(even){
