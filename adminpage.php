@@ -60,6 +60,7 @@
     $unbanNumber = $_GET['unban'];
     $banChange = mysqli_query($conn, "UPDATE users SET banned = '0' WHERE usersId = '$unbanNumber'");
   }
+  
   $searchName = "1";
   if(isset($_GET['search'])){
     if ($_GET['search'] != "") {
