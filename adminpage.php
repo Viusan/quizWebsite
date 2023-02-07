@@ -28,13 +28,7 @@
       <th>User Admin</th>
       <th>User Banned</th>
     </tr>
-    <?php
-    
-    include_once "includes/dbh.inc.php";
-    
-    
-  ?>
-  <?php
+<?php
   include_once "includes/dbh.inc.php";
   //Ser om du er admin, hvis du er det kan du komme deg til siden, ellers vil den altid ta deg med til homepage.php
   if(isset($_SESSION["admin"])){
@@ -62,6 +56,7 @@
   }
   
   $searchName = "1";
+
   if(isset($_GET['search'])){
     if ($_GET['search'] != "") {
       $searchName = $_GET['search'];
@@ -70,18 +65,21 @@
     $fetchResult =  $conn-> query($fetchUserSQL);
     if($fetchResult -> num_rows > 0){
       while ($row = $fetchResult -> fetch_assoc()){
+        
         $banText = "";//Gjør om 0 og 1 til tekst for utsene
         if($row['banned'] == 0){
           $banText = "NOT BANNED";
         }else if($row['banned'] == 1){
           $banText = "BANNED";
         }
+
         $adminText = "";//Gjør om 0 og 1 til tekst for utsene
         if($row['admin'] == 0){
           $adminText = "NOT ADMIN";
         }else if($row['admin'] == 1){
           $adminText = "ADMIN";
         }
+
         echo "<tr>
         <td style='background-color:#50C878;' class='adminTd'>". $row["usersId"] . "</td>
         <td style='background-color:#50C878;' class='adminTd'>". $row["usersName"] . "</td>
@@ -104,6 +102,7 @@
   } else {
     $searchName = "1";
   }
+
     $sql = "SELECT * FROM users WHERE NOT usersName like '%$searchName%';";
     $result = $conn-> query($sql);
 
@@ -147,7 +146,6 @@
           </div>
           </div>
         ";
-
     }
     else{//Hvis det er ingen brukere
       echo "No users found";
