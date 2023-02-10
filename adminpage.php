@@ -12,7 +12,7 @@
 <body class="adminBody">
   <div class="searchBarDiv">
     <form action="" method="GET">
-      <input type="text" name="search" placeholder="Search for a user" class="searchBar">
+      <input type="text" name="search" placeholder="Search for a user" class="searchBar" id="searchInput">
       <button type="submit" class="searchButton">Search</button>
     </form>
   </div>
