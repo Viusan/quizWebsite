@@ -15,6 +15,7 @@ body{
 
 .signUpBody{
   overflow: hidden;
+  background-color: #3b3486;
 }
 
 #websiteContainer, #informasjonsContainer form, #informasjonsContainer{

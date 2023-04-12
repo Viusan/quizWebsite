@@ -58,11 +58,11 @@
         <td class='adminTd'>". $row["usersUid"] ."</td>
         <td class='adminTd'>". $row["level"] ."</td>
         <td class='adminTd'>". $adminText ."</td>";
-        if($banText == "BANNED"){
-          echo "<td class='banned'>". $banText ."</td>";
-        }else{
-          echo "<td class='notBanned'>". $banText ."</td>";
-        }
+          if($banText == "BANNED"){
+            echo "<td class='banned'>". $banText ."</td>";
+          }else{
+            echo "<td class='notBanned'>". $banText ."</td>";
+          }
         echo "
         <td class='adminTd'><button class='banBtn' id=".$row['usersId']." value=".$row['admin'].">Ban/Unban</button></td>
         <td class='adminTd'> <a href='adminpage.php?ban=". $row["usersId"]. "' class='deleteButton'>BAN</a></td>

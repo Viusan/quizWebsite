@@ -23,7 +23,7 @@ if(isset($_POST['selectedRowId'])) {
         $banText = "NOT BANNED";
       }else if($row['banned'] == 1){
         $banText = "BANNED";
-      }
+      } 
 
       $adminText = "";//Gjør om 0 og 1 til tekst for utsene
       if($row['admin'] == 0){
