@@ -407,7 +407,7 @@ ul li label {
 .tableDiv{
   width: 70vw;
   overflow: auto;
-  height: 70vh;
+  height: 60vh;
   border: 1px solid 	#36454F;
   border-radius: 10px 0 0 10px;
 }
@@ -475,4 +475,7 @@ ul li label {
   border-radius: 0 5px 5px 0;
 }
 
-
+/*Faq Side*/
+#faqPageBody {
+  background-color: #7743DB;
+}
