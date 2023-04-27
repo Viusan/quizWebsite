@@ -35,11 +35,11 @@
             <input name='answer' type='text' placeholder='Write your answer'>
             <input type='hidden' value='".$row["id"]."' name='answerid'>
             <button type='submit' name='faqanswersubmit'>Send inn</button>
+            <button type='submit' name='deletequestion'>Delete Question</button>
           </form>
         </div>
         ";
       }
-      
     }
 
   ?>
