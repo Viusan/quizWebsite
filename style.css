@@ -479,3 +479,30 @@ ul li label {
 #faqPageBody {
   background-color: #7743DB;
 }
+
+
+/*faq admin*/
+.questionContainer{
+  margin: 15px;
+}
+
+.questionContainer p{
+  color: #ffe9b1;
+  font-size: 2em;
+}
+
+.questionContainer input{
+  height: 5vh;
+  width: 80%;
+  border: 0;
+  border-radius: 5px;
+}
+
+.questionContainer button{
+  background-color: #3b3486;
+  color: #ffe9b1;
+  font-size: 1.7em;
+  border: none;
+  height: 6vh;
+  border-radius: 3px;
+}

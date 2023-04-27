@@ -22,14 +22,14 @@
     }else{
       header("Location: index.php");
     }
-
+    echo "<div>";
     $sql = "SELECT * FROM faq";
     $result = $conn->query($sql);
     while ($row = $result -> fetch_assoc()){
       $display = $row["display"];
       if($display == 0){
         echo "
-        <div>
+        <div class='questionContainer'>
           <form action='includes/faqsend.php' method='POST'>
             <p id='".$row["id"]."'>".$row["question"]."</p>
             <input name='answer' type='text' placeholder='Write your answer'>
@@ -41,7 +41,7 @@
         ";
       }
     }
-
   ?>
+  </div>
 </body>
 </html>

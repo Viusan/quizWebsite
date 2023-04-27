@@ -65,9 +65,9 @@
           }
         echo "
         <td class='adminTd'><button class='banBtn' id=".$row['usersId']." value=".$row['admin'].">Ban/Unban</button></td>
-        <td class='adminTd'> <a href='adminpage.php?ban=". $row["usersId"]. "' class='deleteButton'>BAN</a></td>
-        <td class='adminTd'> <a href='adminpage.php?unban=". $row["usersId"]. "' class='deleteButton'>UNBAN</a></td>
-        <td class='adminTd'> <a href='adminpage.php?id=". $row["usersId"] ."' class='deleteButton'>Delete </a></td>
+        <td class='adminTd'> <a href='admin.php?ban=". $row["usersId"]. "' class='deleteButton'>BAN</a></td>
+        <td class='adminTd'> <a href='admin.php?unban=". $row["usersId"]. "' class='deleteButton'>UNBAN</a></td>
+        <td class='adminTd'> <a href='admin.php?id=". $row["usersId"] ."' class='deleteButton'>Delete </a></td>
       </tr>";
       
       }
@@ -77,7 +77,7 @@
     <script>
        $("#dbTable").on("click", ".banBtn", function(){
             console.log(this.id);
-            $.post("includes/admin.inc.php", {
+            $.post("includes/test.php", {
             selectedRowId: this.id,
             selectedRowRank: this.value
             }, function(data) {
