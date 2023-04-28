@@ -422,6 +422,11 @@ ul li label {
   height: 3vh;
 }
 
+.adminTable td button{
+  text-align: center;
+  border-radius: 5px;
+}
+
 .adminTd{
   
   color: #fff;
