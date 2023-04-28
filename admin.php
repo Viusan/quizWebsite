@@ -64,34 +64,31 @@
             echo "<td class='notBanned'>". $banText ."</td>";
           }
         echo "
-        <td class='adminTd'><button class='banBtn' id=".$row['usersId']." value=".$row['admin'].">Ban/Unban</button></td>
-        <td class='adminTd'> <a href='admin.php?ban=". $row["usersId"]. "' class='deleteButton'>BAN</a></td>
-        <td class='adminTd'> <a href='admin.php?unban=". $row["usersId"]. "' class='deleteButton'>UNBAN</a></td>
+        <td class='adminTd'><button class='banBtn' id=".$row['usersId']." value=".$row['banned'].">Ban/Unban</button></td>
         <td class='adminTd'> <a href='admin.php?id=". $row["usersId"] ."' class='deleteButton'>Delete </a></td>
       </tr>";
-      
       }
     ?>
   </table>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
-       $("#dbTable").on("click", ".banBtn", function(){
-            console.log(this.id);
-            $.post("includes/test.php", {
-            selectedRowId: this.id,
-            selectedRowRank: this.value
-            }, function(data) {
-                $("#dbTable").html(data);
-            });
-        });
+      $("#dbTable").on("click", ".banBtn", function(){
+          console.log(this.id);
+          $.post("includes/test.php", {
+          selectedRowId: this.id,
+          selectedRowBan: this.value
+          }, function(data) {
+              $("#dbTable").html(data);
+          });
+      });
 
-        $("#searchInput").keyup(function(){
-            $.post("includes/admin.inc.php", {
-            searchedInput: this.value
-            }, function(data) {
-                $("#dbTable").html(data);
-            });
-        });
+      $("#searchInput").keyup(function(){
+          $.post("includes/admin.inc.php", {
+          searchedInput: this.value
+          }, function(data) {
+              $("#dbTable").html(data);
+          });
+      });
 
 </script>
 </body>

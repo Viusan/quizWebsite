@@ -4,7 +4,7 @@ include "dbh.inc.php";
 
 if(isset($_POST['selectedRowId'])) {
   $selectedRowId = $_POST['selectedRowId'];
-  $selectedRowRank = $_POST['selectedRowRank'];
+  $selectedRowRank = $_POST['selectedRowBan'];
 
   if ($selectedRowRank == "0") {
       $sql = "UPDATE users SET banned = '1' WHERE usersId='".$selectedRowId."';";
@@ -45,9 +45,7 @@ if(isset($_POST['selectedRowId'])) {
         echo "<td class='notBanned'>". $banText ."</td>";
       }
       echo "
-      <td class='adminTd'><button class='banBtn' id=".$row['usersId']." value=".$row['admin'].">Ban/Unban</button></td>
-      <td class='adminTd'> <a href='adminpage.php?ban=". $row["usersId"]. "' class='deleteButton'>BAN</a></td>
-      <td class='adminTd'> <a href='adminpage.php?unban=". $row["usersId"]. "' class='deleteButton'>UNBAN</a></td>
+      <td class='adminTd'><button class='banBtn' id=".$row['usersId']." value=".$row['banned'].">Ban/Unban</button></td>
       <td class='adminTd'> <a href='adminpage.php?id=". $row["usersId"] ."' class='deleteButton'>Delete </a></td>
     </tr>";
   };
