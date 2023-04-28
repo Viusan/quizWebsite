@@ -66,7 +66,6 @@
               }
             echo "
             <td class='adminTd'><button class='banBtn' id=".$row['usersId']." value=".$row['banned'].">Ban/Unban</button></td>
-            <td class='adminTd'> <a href='admin.php?id=". $row["usersId"] ."' class='deleteButton'>Delete </a></td>
           </tr>";
           }
         ?>
