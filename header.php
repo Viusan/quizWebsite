@@ -16,7 +16,7 @@
           $admin = $_SESSION['admin'];
           if($admin == 1){ //Hvis du er admin så vil du få tilgang til å komme deg til admin siden
             echo "<a href='faqadminpage.php' class='adminPageATag'>FAQ Admin Page</a>";
-            echo "<a href='adminpage.php' class='adminPageATag'>Admin Page</a>";
+            echo "<a href='admin.php' class='adminPageATag'>Admin Page</a>";
           }
           echo "<a href='includes/logout.inc.php' class='logoutATag'><p>Log out</p></a>";
           

@@ -74,7 +74,7 @@
     <script>
       $("#dbTable").on("click", ".banBtn", function(){
           console.log(this.id);
-          $.post("includes/test.php", {
+          $.post("includes/admin.inc.php", {
           selectedRowId: this.id,
           selectedRowBan: this.value
           }, function(data) {
@@ -89,7 +89,6 @@
               $("#dbTable").html(data);
           });
       });
-
-</script>
+  </script>
 </body>
 </html>
