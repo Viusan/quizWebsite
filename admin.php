@@ -72,7 +72,37 @@
         ?>
       </table>
     </div>
-  </div>
+  </div> 
+<?php
+    if(isset($_SESSION["admin"])){
+      $admin = $_SESSION['admin'];
+      if(!$admin == 1){
+        header("Location: index.php");
+      }
+    }else{
+      header("Location: index.php");
+    }
+    echo "<div class='answerFAQContainer'>";
+    echo "<h2>Answer FAQ questions below</h2>";
+    $sql = "SELECT * FROM faq";
+    $result = $conn->query($sql);
+    while ($row = $result -> fetch_assoc()){
+      $display = $row["display"];
+      if($display == 0){
+        echo "
+        <div class='questionContainer'>
+          <form action='includes/faq.inc.php' method='POST'>
+            <p id='".$row["id"]."'>".$row["question"]."</p>
+            <input name='answer' type='text' placeholder='Write your answer'>
+            <input type='hidden' value='".$row["id"]."' name='answerid'>
+            <button type='submit' name='faqanswersubmit'>Send inn</button>
+            <button type='submit' name='deletequestion'>Delete Question</button>
+          </form>
+        </div>
+        ";
+      }
+    }
+  ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
       $("#dbTable").on("click", ".banBtn", function(){
@@ -93,37 +123,5 @@
           });
       });
   </script>
-
-  
-<?php
-    if(isset($_SESSION["admin"])){
-      $admin = $_SESSION['admin'];
-      if(!$admin == 1){
-        header("Location: index.php");
-      }
-    }else{
-      header("Location: index.php");
-    }
-    echo "<div class='answerFAQContainer'>";
-    echo "<h2>Answer FAQ questions below</h2>";
-    $sql = "SELECT * FROM faq";
-    $result = $conn->query($sql);
-    while ($row = $result -> fetch_assoc()){
-      $display = $row["display"];
-      if($display == 0){
-        echo "
-        <div class='questionContainer'>
-          <form action='includes/faqsend.php' method='POST'>
-            <p id='".$row["id"]."'>".$row["question"]."</p>
-            <input name='answer' type='text' placeholder='Write your answer'>
-            <input type='hidden' value='".$row["id"]."' name='answerid'>
-            <button type='submit' name='faqanswersubmit'>Send inn</button>
-            <button type='submit' name='deletequestion'>Delete Question</button>
-          </form>
-        </div>
-        ";
-      }
-    }
-  ?>
 </body>
 </html>

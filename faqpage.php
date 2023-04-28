@@ -31,7 +31,7 @@
     echo "
       <div>
         <h1>Send in questions</h1>
-        <form action='includes/faqsend.php' method='POST'>
+        <form action='includes/faq.inc.php' method='POST'>
           <input name='question' type='text' placeholder='Write your question'>
           <button type='submit' name='faqsubmit'>Send inn</button>
         </form>
