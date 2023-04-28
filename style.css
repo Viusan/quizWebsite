@@ -395,11 +395,9 @@ ul li label {
 /*admin page*/
 .adminBody{
   background-color: #7743DB;
-  overflow: hidden;
 }
 .webcontainer{
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
 }
@@ -504,4 +502,16 @@ ul li label {
   border: none;
   height: 6vh;
   border-radius: 3px;
+}
+
+.answerFAQContainer{
+  display: flex;
+  flex-flow: column;
+}
+
+.answerFAQContainer h2{
+  align-self: center;
+  color: #ffe9b1;
+  font-size: 2em;
+  margin: 45px 0 60px 0;
 }
