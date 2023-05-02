@@ -14,29 +14,46 @@
     include_once 'header.php';  
     include_once 'includes/ban.inc.php';
     include_once 'includes/dbh.inc.php';
-
+    echo "
+    <div class='questionSendContainer'>
+      <h1>Send in questions</h1>
+      <form action='includes/faq.inc.php' method='POST' class='sendForm'>
+        <input name='question' type='text' placeholder='Write your question'>
+        <button type='submit' name='faqsubmit'>Send inn</button>
+      </form>
+    </div>
+    ";
     $sql = "SELECT * FROM faq";
     $result = $conn->query($sql);
+    echo "<div class='faqContainerDiv'>";
     while ($row = $result -> fetch_assoc()){
       $display = $row["display"];
       if($display == 1){
         echo "
-          <div>
-            <p>".$row["question"]."</p>
+          <button class='dropDownButton'>".$row["question"]."</button>
+          <div class='faqDiv'>
             <p>".$row["answer"]."</p>
           </div>
         ";
       }
     }
-    echo "
-      <div>
-        <h1>Send in questions</h1>
-        <form action='includes/faq.inc.php' method='POST'>
-          <input name='question' type='text' placeholder='Write your question'>
-          <button type='submit' name='faqsubmit'>Send inn</button>
-        </form>
-      </div>
-    ";
+    echo "</div>";
   ?>
+  <script>
+    var dropDownButton = document.getElementsByClassName("dropDownButton");
+    var i;
+
+    for (i = 0; i < dropDownButton.length; i++) {
+      dropDownButton[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+      });
+    }
+  </script>
 </body>
 </html>
