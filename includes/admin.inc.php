@@ -3,13 +3,17 @@
 include "dbh.inc.php";
 
 if(isset($_POST['selectedRowId'])) {
+  //Setter post variabler i vanlig variabler
   $selectedRowId = $_POST['selectedRowId'];
   $selectedRowRank = $_POST['selectedRowBan'];
 
+  //Ser om du er banned eller ikke 
   if ($selectedRowRank == "0") {
+    //Setter banned
       $sql = "UPDATE users SET banned = '1' WHERE usersId='".$selectedRowId."';";
       $result = $conn->query($sql);
   } else if ($selectedRowRank == "1") {
+    //Setter unbanned
       $sql2 = "UPDATE users SET banned = '0' WHERE usersId='".$selectedRowId."';";
       $result = $conn->query($sql2);
   }
@@ -31,7 +35,7 @@ if(isset($_POST['selectedRowId'])) {
       }else if($row['admin'] == 1){
         $adminText = "ADMIN";
       }
-
+      //Lager tabellen
       echo "<tr>
       <td class='adminTd'>". $row["usersId"] . "</td>
       <td class='adminTd'>". $row["usersName"] . "</td>
@@ -52,7 +56,7 @@ if(isset($_POST['selectedRowId'])) {
 
 if(isset($_POST['searchedInput'])) {
   $searchedInput = $_POST['searchedInput'];
-
+  //Henter brukere som du søker etter
   $sql = "SELECT * FROM users WHERE usersName like '%$searchedInput%'";
   $result = $conn->query($sql);
 

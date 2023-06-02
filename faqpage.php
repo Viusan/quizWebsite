@@ -28,7 +28,7 @@
     echo "<div class='faqContainerDiv'>";
     while ($row = $result -> fetch_assoc()){
       $display = $row["display"];
-      if($display == 1){
+      if($display == 1){//Displayer FAQ i tabell
         echo "
           <button class='dropDownButton'>".$row["question"]."</button>
           <div class='faqDiv'>
@@ -43,11 +43,11 @@
     var dropDownButton = document.getElementsByClassName("dropDownButton");
     var i;
 
-    for (i = 0; i < dropDownButton.length; i++) {
+    for (i = 0; i < dropDownButton.length; i++) {//For drop down
       dropDownButton[i].addEventListener("click", function() {
-        this.classList.toggle("active");
+        this.classList.toggle("active");//Setter class til element i html
         var panel = this.nextElementSibling;
-        if (panel.style.display === "block") {
+        if (panel.style.display === "block") {//Sjuler eller viser drop down
           panel.style.display = "none";
         } else {
           panel.style.display = "block";

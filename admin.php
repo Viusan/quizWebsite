@@ -104,20 +104,22 @@
   ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
+      //Ser etter om du har trykket på ban knapp
       $("#dbTable").on("click", ".banBtn", function(){
           console.log(this.id);
+          //Sender informasjon om brukeren du trakk på til admin.inc siden
           $.post("includes/admin.inc.php", {
           selectedRowId: this.id,
           selectedRowBan: this.value
-          }, function(data) {
+          }, function(data) {//Returnerer det den hentet
               $("#dbTable").html(data);
           });
       });
 
-      $("#searchInput").keyup(function(){
-          $.post("includes/admin.inc.php", {
+      $("#searchInput").keyup(function(){//Ser etter hver gang det skjer endring i input
+          $.post("includes/admin.inc.php", {//Sender input verdi
           searchedInput: this.value
-          }, function(data) {
+          }, function(data) {//Returnerer data
               $("#dbTable").html(data);
           });
       });
