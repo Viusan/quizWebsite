@@ -1,6 +1,14 @@
 <?php include_once "header.php";
       include "includes/dbh.inc.php";
       include_once 'includes/ban.inc.php';
+      if(isset($_SESSION["admin"])){
+        $admin = $_SESSION['admin'];
+        if(!$admin == 1){
+          header("Location: index.php");
+        }
+      }else{
+        header("Location: index.php");
+      }
 ?>
 <!DOCTYPE html>
 <html lang="en">
