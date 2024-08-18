@@ -19,7 +19,7 @@
               <h2>Welcome to the website</h2>
               <p>Scroll down to check out our quiz</p>";
       if($userLevel == 3){
-        echo "<h1 id='completeTitle'>Wow, you completed everything!</h1>";
+        echo "<h1 id='completeTitle'><a href='easter.php'>Wow, you completed everything!</a></h1>";
       }
       echo "</div>";
       echo "<div class='quizContainer'>
